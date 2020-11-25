@@ -10,8 +10,9 @@ namespace Requester
 {
     public enum RequestMethod
     {
-        GET = 0,
-        POST, PUT,
+        GET,
+        POST,
+        PUT,
         DELETE,
     }
 
@@ -28,12 +29,7 @@ namespace Requester
 
         public static RequestManager Get()
         {
-            if (singleton == null)
-            {
-                singleton = new RequestManager();
-            }
-
-            return singleton;
+            return singleton ??= new RequestManager();
         }
 
         private HttpClient client;
