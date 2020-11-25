@@ -16,7 +16,7 @@ namespace Requester
     }
 
     public class RequestManager
-    { 
+    {
         public struct Response
         {
             public int statusCode;
@@ -28,7 +28,7 @@ namespace Requester
 
         public static RequestManager Get()
         {
-            if(singleton == null)
+            if (singleton == null)
             {
                 singleton = new RequestManager();
             }
@@ -47,7 +47,8 @@ namespace Requester
         {
             HttpResponseMessage httpResponse = null;
 
-            try { 
+            try
+            {
                 switch (method)
                 {
                     case RequestMethod.DELETE:
@@ -59,9 +60,11 @@ namespace Requester
                     case RequestMethod.PUT:
                         httpResponse = await client.PutAsync(target, body); break;
                 }
-            } catch(Exception e)
+            }
+            catch (Exception e)
             {
-                return new Response {
+                return new Response
+                {
                     statusCode = 0,
                     statusCodeName = "ERROR",
                     content = e.Message

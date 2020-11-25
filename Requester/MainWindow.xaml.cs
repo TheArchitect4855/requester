@@ -47,7 +47,7 @@ namespace Requester
 
         private string MakeAbsolute(string url)
         {
-            if(url.StartsWith("https://") || url.StartsWith("http://"))
+            if (url.StartsWith("https://") || url.StartsWith("http://"))
             {
                 return url;
             }
