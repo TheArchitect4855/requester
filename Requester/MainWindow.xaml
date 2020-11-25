@@ -1,0 +1,26 @@
+﻿<Window x:Class="Requester.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Requester"
+        mc:Ignorable="d"
+        Title="Requester" Height="450" Width="800">
+    <Grid>
+        <ComboBox x:Name="requestMethodInput" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="GET"/>
+            <ComboBoxItem Content="POST"/>
+            <ComboBoxItem Content="PUT"/>
+            <ComboBoxItem Content="DELETE"/>
+        </ComboBox>
+        <Label Content="Request Method" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top"/>
+        <Label Content="Target URI" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="targetUrlInput" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" Text="localhost" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Request Body" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="requestBodyInput" HorizontalAlignment="Left" Height="226" Margin="10,158,0,0" TextWrapping="Wrap" Text="{}{ }" VerticalAlignment="Top" Width="772" AcceptsReturn="True" AcceptsTab="True"/>
+        <Label Content="Response" HorizontalAlignment="Left" Margin="135,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="responseOutput" HorizontalAlignment="Left" Height="112" Margin="135,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="647" Text="{}{ }" IsReadOnly="True"/>
+        <Button x:Name="sendRequestButton" Content="Send Request" HorizontalAlignment="Left" Margin="10,389,0,0" VerticalAlignment="Top" Width="85" Click="OnSendRequestButtonClicked"/>
+        <Label x:Name="responseCodeLabel" Content="Response Code: 000 (NAME)" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top" Width="582" HorizontalContentAlignment="Right"/>
+    </Grid>
+</Window>
